@@ -1,6 +1,6 @@
 const express = require('express');
 const routes = express.Router();
-
+//Exemplos de rotas
 //const productController = require('./controllers/ProductController');
 
 // routes.get("/products",productController.index);
