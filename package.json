@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,11 @@
   },
   "homepage": "https://github.com/Franklin-Rodrigo/BurAki#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "require-dir": "^1.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11"
   }
 }
