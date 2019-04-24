@@ -15,6 +15,9 @@ const app = express();
 
 app.get('/', (req, res) => res.send('INDEX'));
 
+//User routes
+app.use('/user', require('./routes/user'));
+
 const PORT = process.env.PORT || '8002';
 
 app.listen(PORT , console.log(`Server started on port ${PORT}`));
