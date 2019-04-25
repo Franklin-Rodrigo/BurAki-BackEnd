@@ -6,6 +6,12 @@ module.exports = new Sequelize('postgres', 'postgres', 'buraki', {
   dialect: 'postgres',
   operatorsAliases: false,
   port: '8002',
+  schema:'buraki',
+
+  freezeTableName: true,
+  define: { //Desabilita uso do time na db, evitando erro com 'CreateAt'
+    timestamps: false
+  },
   
     pool: {
         max: 5,
