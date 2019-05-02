@@ -9,7 +9,7 @@ module.exports={
     },
     getById(req, res){
         return user
-            .findById(req.params.id)
+            .findByPk(req.params.id)
             .then((user)=>{
                 if(!user){
                     return res.status(404).send({
@@ -30,7 +30,7 @@ module.exports={
     },
     update(req,res){
         return user
-            .findById(req.params.id)
+            .findByPk(req.params.id)
                 .then(user=>{
                     if(!user){
                         return res.status(404).send({
@@ -38,7 +38,7 @@ module.exports={
                         });
                     }
                     return user.update(req.body)
-                    .then(()=> res,status(200).json(user))
+                    .then(()=> res.status(200).json(user))
                     .catch((error)=> res.status(400).send(error));
                 })
                 .catch((error)=> res.status(400).send(error));
@@ -46,7 +46,7 @@ module.exports={
 
     delete(req,res){
         return user
-            .findById(req.params.id)
+            .findByPk(req.params.id)
                 .then(user=>{
                     if(!user){
                         return res.status(400).send({
