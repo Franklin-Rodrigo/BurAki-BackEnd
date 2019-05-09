@@ -1,6 +1,6 @@
 const { user } = require('../models');
 const {login_infor} = require('../models');
-// const {u_adress} = require ('../models');
+const { u_adre } = require('../models');
 const bcrypt = require('bcrypt');
 const salt = bcrypt.genSaltSync(10);
 module.exports={
@@ -47,6 +47,19 @@ module.exports={
                 })
             .catch((error)=> res.status(400).send(error));
 
+    }, 
+    addAdress(req, res){
+        return u_adre
+            .create(req.body)
+                .then(u_adres=> {
+                    user.findByPk(req.body.id)
+                        .then(users=>{
+                            users.update({
+                                id_adress : u_adres.body.id,
+                            })
+                        })
+                    res.status(200).json(u_adres)})
+                .catch((error)=>{res.status(400).send(error)});
     },
  
     update(req,res){

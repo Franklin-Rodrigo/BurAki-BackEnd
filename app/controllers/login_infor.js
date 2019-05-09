@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const salt = bcrypt.genSaltSync(10);
 
 
+
 module.exports={
 
     list(req,res){
@@ -22,8 +23,10 @@ module.exports={
                         message:'login Not Found',
                     });
                 }
+                 const hash = bcrypt.hashSync(req.body.password, salt);
+
                 return login_infors.update({
-                    password: req.body.password
+                    password: hash
                 })
                     .then((login_infors)=> res.status(200).json(login_infors))
                     .catch((error)=> res.status(400).send(error));

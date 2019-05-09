@@ -9,12 +9,7 @@ module.exports={
             .catch((error)=>{ res.status(400).send(error)});
     },
 
-    addAdress(req, res){
-        return u_adre
-            .create(req.body)
-                .then(u_adres=> res.status(200).json(u_adres))
-                .catch((error)=>{res.status(400).send(error)});
-    },
+   
     
     getByAdress(req,res){
         return u_adre
