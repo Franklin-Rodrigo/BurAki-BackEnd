@@ -9,10 +9,7 @@ module.exports = {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      id_user:{
-        allowNull:false,
-        type: DataTypes.INTEGER,
-      },
+     
       st_name: {
         allowNull: false,
         type: DataTypes.STRING,

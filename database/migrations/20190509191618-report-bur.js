@@ -2,27 +2,31 @@
 
 module.exports = {
   up: (queryInterface, DataTypes) => {
-    return queryInterface.createTable('login_infors', {
+   return queryInterface.createTable('report_bur', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      id_user:{
+      id_user: {
         allowNull:false,
         type: DataTypes.INTEGER,
         unique:true,
         
       },
-      login: {
-        allowNull: false,
+      description: {
+        allowNull:false,
         type: DataTypes.STRING,
-        unique:true,
       },
-      password: {
-        allowNull: false,
-        type: DataTypes.STRING,
+      id_img: {
+        type:DataTypes.INTEGER,
+      },
+      status: {
+        type:DataTypes.INTEGER,
+      },
+      severity_lvl: {
+        type:DataTypes.INTEGER,
       },
       createdAt: {
         allowNull: false,
@@ -36,8 +40,8 @@ module.exports = {
   },
 
   down: (queryInterface, DataTypes) => {
-
-      return queryInterface.dropTable('login_infors');
-
+  
+      return queryInterface.dropTable('report_bur');
+  
   }
 };
